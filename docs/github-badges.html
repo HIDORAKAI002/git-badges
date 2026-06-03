@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Badges Guide | Git Badges Playground</title>
+  <meta name="description" content="A clean GitHub badges and achievements guide for Pull Shark, YOLO, Quickdraw, Pair Extraordinaire, Starstruck, Galaxy Brain, and Public Sponsor.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hidorakai002.github.io/git-badges/docs/github-badges.html">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17130f;
+      --muted: #62584f;
+      --paper: #f8f3eb;
+      --panel: rgba(255, 255, 255, .58);
+      --line: #d7c8b7;
+      --teal: #0f766e;
+      --teal-dark: #104f49;
+      --amber: #b45309;
+      --rose: #9f1239;
+      --blue: #1d4ed8;
+      --green: #15803d;
+      --shadow: 0 22px 60px rgba(44, 31, 21, .12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 14% 12%, rgba(15, 118, 110, .16), transparent 28%),
+        radial-gradient(circle at 90% 6%, rgba(180, 83, 9, .18), transparent 30%),
+        linear-gradient(180deg, #fbf7ef 0%, var(--paper) 42%, #efe6d7 100%);
+      line-height: 1.62;
+    }
+
+    a { color: var(--teal-dark); }
+
+    .shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(248, 243, 235, .82);
+      border-bottom: 1px solid rgba(215, 200, 183, .82);
+    }
+
+    .topbar-inner {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font: 800 14px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 12px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      color: var(--muted);
+      text-decoration: none;
+      font: 700 13px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      border-color: var(--line);
+      color: var(--ink);
+      outline: none;
+      background: rgba(255, 255, 255, .52);
+    }
+
+    .hero {
+      padding: 72px 0 50px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      width: fit-content;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .5);
+      color: var(--teal-dark);
+      font: 800 13px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 960px;
+      margin: 18px 0 18px;
+      font-size: clamp(44px, 7vw, 94px);
+      line-height: .94;
+      letter-spacing: 0;
+    }
+
+    .lede {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(18px, 2.2vw, 23px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 17px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font: 800 14px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      box-shadow: 5px 5px 0 rgba(15, 118, 110, .25);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
+      align-items: start;
+      padding: 34px 0 70px;
+    }
+
+    .toc {
+      position: sticky;
+      top: 88px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .toc strong {
+      display: block;
+      margin-bottom: 10px;
+      font: 800 13px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      text-transform: uppercase;
+    }
+
+    .toc a {
+      display: block;
+      padding: 8px 0;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .toc a:hover,
+    .toc a:focus-visible {
+      color: var(--teal-dark);
+      outline: none;
+    }
+
+    .content {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: clamp(18px, 3vw, 30px);
+      box-shadow: var(--shadow);
+    }
+
+    .badge-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      font: 800 16px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      text-transform: uppercase;
+    }
+
+    p { color: var(--muted); }
+
+    .pill {
+      flex: 0 0 auto;
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid currentColor;
+      font: 800 12px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      text-transform: uppercase;
+    }
+
+    .green { color: var(--green); }
+    .blue { color: var(--blue); }
+    .amber { color: var(--amber); }
+    .rose { color: var(--rose); }
+    .teal { color: var(--teal); }
+
+    .steps {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+
+    .steps li {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 12px;
+      border: 1px solid rgba(215, 200, 183, .8);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, .42);
+    }
+
+    .steps li::before {
+      content: counter(step);
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #fff;
+      font: 800 13px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    pre {
+      overflow-x: auto;
+      margin: 16px 0 0;
+      padding: 16px;
+      border: 1px solid rgba(23, 19, 15, .18);
+      border-radius: 6px;
+      background: #201a15;
+      color: #fff7ea;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .94em;
+    }
+
+    .note {
+      margin-top: 16px;
+      padding: 14px;
+      border-left: 4px solid var(--amber);
+      background: rgba(180, 83, 9, .08);
+      color: var(--ink);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mini {
+      border: 1px solid rgba(215, 200, 183, .86);
+      border-radius: 6px;
+      padding: 14px;
+      background: rgba(255, 255, 255, .38);
+    }
+
+    .mini strong {
+      display: block;
+      margin-bottom: 5px;
+      font: 800 14px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    @media (max-width: 780px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+
+      .badge-head {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="../index.html">Git Badges Playground</a>
+      <nav class="nav" aria-label="Guide sections">
+        <a href="#pull-shark">Pull Shark</a>
+        <a href="#yolo">YOLO</a>
+        <a href="#quickdraw">Quickdraw</a>
+        <a href="#pair">Pair</a>
+        <a href="#strategy">Strategy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell">
+        <div class="kicker">GitHub badges guide</div>
+        <h1>Earn GitHub achievements by practicing real workflows.</h1>
+        <p class="lede">A clean guide for Pull Shark, YOLO, Quickdraw, Pair Extraordinaire, Starstruck, and Galaxy Brain, built around the scripts in Git Badges Playground.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://github.com/HIDORAKAI002/git-badges">Fork The Repo</a>
+          <a class="button secondary" href="../llms.txt">LLM Guide</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="shell layout">
+      <aside class="toc">
+        <strong>On this page</strong>
+        <a href="#fast-start">Fast start</a>
+        <a href="#pull-shark">Pull Shark</a>
+        <a href="#yolo">YOLO</a>
+        <a href="#quickdraw">Quickdraw</a>
+        <a href="#pair">Pair Extraordinaire</a>
+        <a href="#strategy">Harder badges</a>
+        <a href="#responsible">Responsible use</a>
+      </aside>
+
+      <div class="content">
+        <section class="card" id="fast-start">
+          <div class="badge-head">
+            <h2>Fast start</h2>
+            <span class="pill teal">2 commands</span>
+          </div>
+          <p>Fork the repo, clone your fork, authenticate GitHub CLI, and run the script. The playground writes small entries to <code>playground-log.md</code> so each pull request has a real change.</p>
+          <pre><code>git clone https://github.com/YOUR_USERNAME/git-badges.git
+cd git-badges
+gh auth login
+bash scripts/unlock.sh</code></pre>
+          <pre><code>.\scripts\unlock.ps1</code></pre>
+        </section>
+
+        <section class="card" id="pull-shark">
+          <div class="badge-head">
+            <h2>Pull Shark</h2>
+            <span class="pill blue">Merged PRs</span>
+          </div>
+          <p>Pull Shark is tied to merged pull requests. The playground creates two branches, opens two pull requests, merges them, and deletes the remote branches.</p>
+          <ol class="steps">
+            <li>Run <code>pull-yolo</code> mode in a public repo you control.</li>
+            <li>The script creates a branch and commits a small log entry.</li>
+            <li>GitHub CLI opens and merges the pull request.</li>
+            <li>The process repeats for a second merged pull request.</li>
+          </ol>
+          <pre><code>bash scripts/unlock.sh pull-yolo</code></pre>
+          <pre><code>.\scripts\unlock.ps1 -Mode pull-yolo</code></pre>
+        </section>
+
+        <section class="card" id="yolo">
+          <div class="badge-head">
+            <h2>YOLO</h2>
+            <span class="pill amber">No review</span>
+          </div>
+          <p>YOLO is tied to merging a pull request without a code review. The same <code>pull-yolo</code> flow merges directly, which is why it can practice both YOLO and Pull Shark.</p>
+          <div class="note">If your repo has branch protection requiring reviews, this flow cannot trigger YOLO. Use a sandbox repo you own with no required review rule.</div>
+        </section>
+
+        <section class="card" id="quickdraw">
+          <div class="badge-head">
+            <h2>Quickdraw</h2>
+            <span class="pill green">Under 5 min</span>
+          </div>
+          <p>Quickdraw is tied to opening and closing an issue or pull request quickly. The playground creates an issue and closes it immediately through GitHub CLI.</p>
+          <pre><code>bash scripts/unlock.sh quickdraw</code></pre>
+          <pre><code>.\scripts\unlock.ps1 -Mode quickdraw</code></pre>
+        </section>
+
+        <section class="card" id="pair">
+          <div class="badge-head">
+            <h2>Pair Extraordinaire</h2>
+            <span class="pill rose">Co-author</span>
+          </div>
+          <p>Pair Extraordinaire is tied to a merged pull request containing a valid co-authored commit trailer.</p>
+          <pre><code>Co-authored-by: Name &lt;email@example.com&gt;</code></pre>
+          <p>Use a real GitHub email for the co-author. Fake or unmatched emails may not count.</p>
+          <pre><code>COAUTHOR_NAME="Name" COAUTHOR_EMAIL="email@example.com" bash scripts/unlock.sh pair</code></pre>
+          <pre><code>.\scripts\unlock.ps1 -Mode pair -CoAuthorName "Name" -CoAuthorEmail "email@example.com"</code></pre>
+        </section>
+
+        <section class="card" id="strategy">
+          <div class="badge-head">
+            <h2>Harder badges</h2>
+            <span class="pill teal">Real activity</span>
+          </div>
+          <div class="matrix">
+            <div class="mini">
+              <strong>Starstruck</strong>
+              Build a repo people genuinely want to star. Add screenshots, clear docs, useful topics, and share it with the right audience.
+            </div>
+            <div class="mini">
+              <strong>Galaxy Brain</strong>
+              Answer real questions in public repository Discussions. Accepted answers are controlled by the author or maintainers.
+            </div>
+            <div class="mini">
+              <strong>Public Sponsor</strong>
+              Sponsor a maintainer or project through GitHub Sponsors. This one involves payment.
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="responsible">
+          <div class="badge-head">
+            <h2>Responsible use</h2>
+            <span class="pill amber">Keep it clean</span>
+          </div>
+          <p>This playground is for your own repos and forks. Do not spam maintainers, open fake pull requests in other projects, buy stars, or flood Discussions with low-quality answers.</p>
+          <p>Badges are fun. Real GitHub activity is better.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="shell">Git Badges Playground. Built for developers learning GitHub achievements by doing the actual workflow.</div>
+  </footer>
+</body>
+</html>

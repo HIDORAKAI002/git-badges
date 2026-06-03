@@ -13,6 +13,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://hidorakai002.github.io/git-badges/docs/github-badges.html</loc>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://hidorakai002.github.io/git-badges/docs/github-badges.md</loc>
     <priority>0.9</priority>
   </url>
