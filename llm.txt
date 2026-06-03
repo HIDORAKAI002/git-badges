@@ -1,0 +1,8 @@
+# Git Badges Playground
+
+This file mirrors llms.txt for tools that request llm.txt by mistake.
+
+Canonical LLM guide: https://hidorakai002.github.io/git-badges/llms.txt
+Repository: https://github.com/HIDORAKAI002/git-badges
+
+Git Badges Playground is an interactive GitHub achievements tutorial and sandbox for GitHub badges including Pull Shark, YOLO, Quickdraw, Pair Extraordinaire, Starstruck, and Galaxy Brain.

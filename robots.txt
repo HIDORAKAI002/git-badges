@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hidorakai002.github.io/git-badges/sitemap.xml

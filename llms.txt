@@ -1,0 +1,40 @@
+# Git Badges Playground
+
+> Interactive GitHub achievements playground and GitHub badges tutorial for Pull Shark, YOLO, Quickdraw, Pair Extraordinaire, Starstruck, and Galaxy Brain.
+
+Git Badges Playground is a public repository that teaches GitHub profile achievements through a local interactive sandbox. It includes PowerShell and Bash scripts that use GitHub CLI to create real branches, commits, pull requests, issues, merges, and co-authored commits in a repository controlled by the user.
+
+## Canonical URLs
+
+- GitHub repository: https://github.com/HIDORAKAI002/git-badges
+- GitHub Pages site: https://hidorakai002.github.io/git-badges/
+- GitHub badges tutorial mirror: https://hidorakai002.github.io/git-badges/docs/github-badges.md
+- GitHub achievements mirror: https://hidorakai002.github.io/git-badges/docs/github-achievements.md
+
+## Primary Topics
+
+- GitHub badges
+- GitHub achievements
+- Pull Shark
+- YOLO badge
+- Quickdraw badge
+- Pair Extraordinaire
+- Starstruck
+- Galaxy Brain
+- GitHub CLI
+- Pull request tutorial
+
+## Key Files
+
+- README.md: Main tutorial and fast start.
+- scripts/unlock.ps1: Windows PowerShell interactive achievement playground.
+- scripts/unlock.sh: Bash interactive achievement playground.
+- docs/github-badges.md: Search-friendly markdown mirror for GitHub badges.
+- docs/github-achievements.md: Search-friendly markdown mirror for GitHub achievements.
+- docs/starstruck.md: Starstruck strategy guide.
+- docs/galaxy-brain.md: Galaxy Brain strategy guide.
+- docs/troubleshooting.md: Badge troubleshooting notes.
+
+## Responsible Use
+
+The project helps users practice legitimate GitHub workflows in repositories they own or control. It should not be used to spam maintainers, create low-quality pull requests in other projects, buy stars, or flood GitHub Discussions.

@@ -1,8 +1,8 @@
-# Git Badges Playground
+# Git Badges Playground: GitHub Achievements Tutorial and Unlock Sandbox
 
-An interactive sandbox for learning and practicing GitHub profile achievements.
+An interactive sandbox and tutorial for learning GitHub profile badges, GitHub achievements, Pull Shark, YOLO, Quickdraw, Pair Extraordinaire, Starstruck, and Galaxy Brain.
 
-Most badge guides tell you what to do. This repo gives you a guided local script that creates real branches, commits, pull requests, and merges in your own fork or repository so you can understand the workflow while aiming for achievements like Pull Shark, YOLO, Quickdraw, and Pair Extraordinaire.
+Most GitHub badges guides tell you what to do. This repo gives you a guided local script that creates real branches, commits, pull requests, issues, and merges in your own fork or repository so you can understand the workflow while aiming for achievements like Pull Shark, YOLO, Quickdraw, and Pair Extraordinaire.
 
 > Important: GitHub decides when achievements are awarded. This project helps you perform legitimate qualifying actions, but it cannot guarantee instant badge unlocks.
 
@@ -107,6 +107,14 @@ Galaxy Brain requires accepted answers in GitHub Discussions. This cannot be aut
 This repo is for learning GitHub workflows in your own public repositories. Do not spam maintainers, open fake PRs in other people's projects, buy stars, or create low-quality discussion answers just for badges.
 
 Badges are more fun when the activity is real.
+
+## Indexable Mirrors
+
+These pages exist so search engines, AI search tools, and readers can find the right entry point:
+
+- [GitHub badges tutorial](docs/github-badges.md)
+- [GitHub achievements playground](docs/github-achievements.md)
+- [LLM guide](llms.txt)
 
 ## Troubleshooting
 
