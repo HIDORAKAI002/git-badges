@@ -1,0 +1,20 @@
+name: Playground Demo
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+
+jobs:
+  explain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Explain the playground
+        run: |
+          echo "Git Badges Playground is designed to be run locally with GitHub CLI."
+          echo "Run: bash scripts/unlock.sh"
+          echo "On Windows, run: .\\scripts\\unlock.ps1"
+          echo "Local execution is preferred because achievement credit depends on real user activity."
